@@ -5,15 +5,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var app_routing_module_1 = require("./app.routing.module");
-var dashboard_component_1 = require("./components/dashboard.component");
 var core_1 = require("@angular/core");
-var forms_1 = require("@angular/forms");
 var platform_browser_1 = require("@angular/platform-browser");
+var animations_1 = require("@angular/platform-browser/animations");
 var app_component_1 = require("./app.component");
-var hero_detail_component_1 = require("./components/hero-detail.component");
-var hero_service_1 = require("./services/hero.service");
-var heroes_component_1 = require("./components/heroes.component");
+var crisis_list_component_1 = require("./crisis-list.component");
+var notFound_component_1 = require("./notFound.component");
+var app_routing_module_1 = require("./app.routing.module");
+var heroes_module_1 = require("./heroes/heroes.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -21,10 +20,21 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, app_routing_module_1.AppRoutingModule],
-        declarations: [app_component_1.AppComponent, hero_detail_component_1.HeroDetailComponent, heroes_component_1.HeroesComponent, dashboard_component_1.DashboardComponent],
-        bootstrap: [app_component_1.AppComponent],
-        providers: [hero_service_1.HeroService]
+        imports: [
+            platform_browser_1.BrowserModule,
+            heroes_module_1.HeroesModule,
+            app_routing_module_1.AppRoutingModule,
+            animations_1.BrowserAnimationsModule
+        ],
+        declarations: [
+            app_component_1.AppComponent,
+            crisis_list_component_1.CrisisListComponent,
+            notFound_component_1.NotFoundComponent
+        ],
+        bootstrap: [
+            app_component_1.AppComponent
+        ],
+        providers: []
     })
 ], AppModule);
 exports.AppModule = AppModule;
